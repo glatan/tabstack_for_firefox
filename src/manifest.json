@@ -1,0 +1,11 @@
+{
+    "manifest_version": 2,
+    "version": "20180219",
+    "name": "TabStack for Firefox",
+    "permissions": [
+        "tabs"
+    ],
+    "background": {
+        "scripts": ["main.js"]
+    }
+}
