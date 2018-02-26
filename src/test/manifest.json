@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "version": "20180226",
-  "name": "TabStack for Firefox",
+  "name": "TabStack for Firefox Test",
   "permissions": [
       "tabs",
     "menus"
