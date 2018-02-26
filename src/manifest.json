@@ -3,10 +3,10 @@
   "version": "20180226",
   "name": "TabStack for Firefox",
   "permissions": [
-      "tabs",
-      "menus"
+    "tabs",
+    "menus"
   ],
   "background": {
-      "scripts": ["main.js"]
+    "scripts": ["main.js"]
   }
 }
