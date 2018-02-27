@@ -4,10 +4,6 @@ machine:
   node:
     version: 9.6.1
 
-dependencies:
-  override:
-    - npm install --dev
-
 jobs:
   test:
     - run: |
