@@ -13,3 +13,9 @@ jobs:
     override:
       - mkdir -p $CIRCLE_TEST_REPORTS/reports
       - eslint ./src/ --format junit --output-file $CIRCLE_TEST_REPORTS/reports/eslint.xml
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
