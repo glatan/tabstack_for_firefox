@@ -1,3 +1,15 @@
-test:
-  pre:
-    - npm run lint -- --format=junit -o $CIRCLE_TEST_REPORTS/eslint/eslint.xml ./src
+version: 2
+
+machine:
+  node:
+    version: 9.6.1
+
+dependencies:
+  override:
+    - npm install --dev
+
+jobs:
+  test:
+    override:
+      - mkdir -p $CIRCLE_TEST_REPORTS/reports
+      - eslint ./src/ --format junit --output-file $CIRCLE_TEST_REPORTS/reports/eslint.xml
