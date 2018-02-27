@@ -8,7 +8,8 @@ dependencies:
   override:
     - npm install --dev
 
-test:
-  pre:
-    - mkdir -p $CIRCLE_TEST_REPORTS/reports
-    - eslint ./src/ --format junit --output-file $CIRCLE_TEST_REPORTS/reports/eslint.xml
+jobs:
+  test:
+    pre:
+      - mkdir -p $CIRCLE_TEST_REPORTS/reports
+      - eslint ./src/ --format junit --output-file $CIRCLE_TEST_REPORTS/reports/eslint.xml
