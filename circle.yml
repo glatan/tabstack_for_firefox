@@ -3,6 +3,6 @@ machine:
     version: 9.6.1
 
 test:
-  pre:
+  override:
     - mkdir -p $CIRCLE_TEST_REPORTS/reports
     - eslint ./src/ --format junit --output-file $CIRCLE_TEST_REPORTS/reports/eslint.xml
