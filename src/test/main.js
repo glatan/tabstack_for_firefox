@@ -1,1 +1,1 @@
-const hoge = 500;
+const meu = 500;
