@@ -1,1 +1,2 @@
-const meu = 500;
+const meu = 500
+console.log(meu)
