@@ -1,4 +1,4 @@
-var test = function() {
-    var count = 1;
-    console.log(count);
+const test = function() {
+  let count = 1;
+  console.log(count);
 }
