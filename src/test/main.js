@@ -1,2 +1,1 @@
-const meu = 500
-console.log(meu)
+// このファイルに各種テスト用のファイルをrequireして使ってください :pray:
