@@ -1,0 +1,27 @@
+{
+  "name": "tabstack_for_firefox",
+  "version": "20180301",
+  "description": "Firefox向けのアドオンです",
+  "main": "src/main.js",
+  "directories": {
+    "doc": "doc",
+    "src": "src"
+  },
+  "dependencies": {
+    "eslint": "^4.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quart7350/tabstack_for_firefox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/quart7350/tabstack_for_firefox/issues"
+  },
+  "homepage": "https://github.com/quart7350/tabstack_for_firefox#readme"
+}
