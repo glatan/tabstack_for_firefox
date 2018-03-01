@@ -1,1 +1,2 @@
+// CircleCI上でnode_modulesのコードチェックが走ることを防ぐために書いてます
 node_modules
