@@ -10,6 +10,7 @@
   },
   "rules": {
     "no-var": 2,
+    "no-console": 0,
     "indent": ["error", 2],
     "semi": ["error", "never"]
   }
