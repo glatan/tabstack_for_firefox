@@ -7,6 +7,6 @@
     "menus"
   ],
   "background": {
-    "scripts": ["main.js"]
+    "scripts": ["main.js", "manage_tabs.js"]
   }
 }
