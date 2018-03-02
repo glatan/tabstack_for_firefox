@@ -2,11 +2,21 @@
   "manifest_version": 2,
   "version": "20180226",
   "name": "TabStack for Firefox Test",
+  "applications": {
+    "gecko": {
+      "id": "glatan.edu@gmail.com"
+    }
+  },
+  "storage": {
+    "managed_schema": "tabstack_info.json"
+  },
   "permissions": [
     "tabs",
-    "menus"
+    "menus",
+    "storage",
+    "unlimitedStorage"
   ],
   "background": {
-    "scripts": ["main.js"]
+    "scripts": ["logfile_test.js"]
   }
 }
