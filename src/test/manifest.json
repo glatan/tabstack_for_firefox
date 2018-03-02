@@ -7,9 +7,6 @@
       "id": "glatan.edu@gmail.com"
     }
   },
-  "storage": {
-    "managed_schema": "tabstack_info.json"
-  },
   "permissions": [
     "tabs",
     "menus",
