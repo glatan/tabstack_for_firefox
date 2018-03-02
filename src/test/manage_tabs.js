@@ -43,10 +43,8 @@ browser.menus.onClicked.addListener(function(info, tab) {
         active: true
       })
       querying.then((tabs) => {
+        // 取得したタブのidをもとにタブを閉じる
         browser.tabs.remove(tabs[0].id).then(() => {
-          // 取得したタブのidをもとにタブを閉じる
-          removeTabs.push(tabs[0].id)
-        }).then(() => {
           console.log('removed')
         })
       })
