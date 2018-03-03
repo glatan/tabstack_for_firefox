@@ -11,14 +11,14 @@ jobs:
           keys:
           - dependencies-{{ checksum "package.json" }}
           - dependencies-
-      - run: npm install
+      - run: npm install --global eslint
       - save_cache:
           paths:
             - node_modules
           key: dependencies-{{ checksum "package.json" }}
       - run:
           name: "Run ESLint"
-          command: eslint -- --format junit -o reports/junit/eslint.xml
+          command: eslint ./src/ --format junit -o reports/junit/eslint.xml
       - store_test_results:
           path: reports/junit
       - store_artifacts:
