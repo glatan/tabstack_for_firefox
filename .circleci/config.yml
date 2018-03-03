@@ -11,7 +11,7 @@ jobs:
           keys:
           - dependencies-{{ checksum "package.json" }}
           - dependencies-
-      - run: npm install --global eslint
+      - run: npm install eslint
       - save_cache:
           paths:
             - node_modules
