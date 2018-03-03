@@ -15,6 +15,6 @@
     "sessions"
   ],
   "background": {
-    "scripts": ["main.js", "manage_tabs.js"]
+    "scripts": ["main.js"]
   }
 }
