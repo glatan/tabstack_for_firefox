@@ -1,10 +1,9 @@
 version: 2
 
 jobs:
-  build:
+  test:
     docker:
-      -image: node: 8.9 .4
-
+      -image: node: 8.9.4
     steps:
       - checkout
       - run: npm install
@@ -17,3 +16,9 @@ jobs:
             path: ./reports
           - store_artifacts:
             path: ./reports
+
+workflow:
+  version: 2
+  test:
+    jobs:
+      - test
