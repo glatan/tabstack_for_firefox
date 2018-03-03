@@ -25,7 +25,7 @@ browser.menus.create({
   }
 })
 
-browser.menus.onClicked.addListener(function(info, tab) {
+browser.menus.onClicked.addListener(function(info) {
   switch (info.menuItemId){
     // 新しいタブの作成
     case "tab-test-create":
