@@ -1,18 +1,17 @@
 {
   "name": "tabstack_for_firefox",
-  "version": "20180301",
+  "version": "0.0.1",
   "description": "Firefox向けのアドオンです",
   "main": "src/main.js",
   "directories": {
     "doc": "doc",
     "src": "src"
   },
-  "dependencies": {
-    "eslint": "^4.18.1"
+  "devDependencies": {
+    "eslint": "^4.18.2"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint": "eslint ./src/ --format junit -o reports/junit/eslint.xml"
   },
   "repository": {
     "type": "git",
