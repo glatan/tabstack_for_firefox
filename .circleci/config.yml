@@ -12,7 +12,6 @@ jobs:
           - dependencies-{{ checksum "package.json" }}
           - dependencies-
       - run: npm install eslint --save-dev
-      - run: ./node_modules/.bin/eslint --init
       - save_cache:
           paths:
             - node_modules
