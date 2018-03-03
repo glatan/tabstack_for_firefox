@@ -1,0 +1,19 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      -image: node: 8.9 .4
+
+    steps:
+      - checkout
+      - run: npm install
+      - run:
+          name: run eslint
+          command: |
+            mkdir -p ./reports
+            npx eslint ./app/ --format junit --output-file ./reports/eslint.xml
+          - store_test_results:
+            path: ./reports
+          - store_artifacts:
+            path: ./reports
