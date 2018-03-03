@@ -8,7 +8,7 @@
     "src": "src"
   },
   "devDependencies": {
-    "eslint": "^4.18.1"
+    "eslint": "^4.18.2"
   },
   "scripts": {
     "test": "eslint ./src/ --format junit -o reports/junit/eslint.xml"
