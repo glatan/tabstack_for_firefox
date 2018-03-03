@@ -49,8 +49,7 @@ browser.menus.onClicked.addListener(function(info) {
         })
       })
       break
-    default: {
+    default:
       console.log("error")
-    }
   }
 })
