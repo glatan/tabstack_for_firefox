@@ -19,7 +19,7 @@ jobs:
           key: dependencies-{{ checksum "package.json" }}
       - run:
           name: "Run ESLint"
-          command: npm test
+          command: npm run eslint
       - store_test_results:
           path: reports/junit
       - store_artifacts:
