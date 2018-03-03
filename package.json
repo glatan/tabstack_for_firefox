@@ -1,6 +1,6 @@
 {
   "name": "tabstack_for_firefox",
-  "version": "20180303",
+  "version": "0.0.1",
   "description": "Firefox向けのアドオンです",
   "main": "src/main.js",
   "directories": {
