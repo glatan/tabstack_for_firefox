@@ -1,6 +1,22 @@
-// ブラウザ起動時に保存されていたタブの状態を取得
-browser.runtime.onStartup.addListener(() => {
+// タブのスタック状態の取得
+function get_tab_state () {
   let tab_state = browser.storage.local.get()
+  tab_state.then(console.log(tab_state))
+}
+// タブのスタック状態の保存
+function save_tab_state() {
+  browser.storage.local.set({
+    // タブのスタック状態のオブジェクト
+  }).then(console.log("Tab State Saved"))
+}
+
+// ブラウザ起動時の処理
+browser.runtime.onStartup.addListener(() => {
+  get_tab_state()
+})
+// ブラウザ終了時の処理
+browser.sessions.onChanged.addListener((/*object*/) => {
+  save_tab_state(/*object*/)
 })
 
 // タブをスタックするMenuを生成
@@ -28,9 +44,3 @@ browser.menus.create({
     console.log("Menu Created!")
   }
 }
-
-browser.sessions.onChanged.addListener(() => {
-  browser.storage.local.set({
-    // タブのスタック状態のオブジェクト
-  })
-})
