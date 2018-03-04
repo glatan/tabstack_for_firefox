@@ -1,10 +1,18 @@
 {
   "manifest_version": 2,
-  "version": "20180226",
+  "version": "20180303",
   "name": "TabStack for Firefox",
+  "applications": {
+    "gecko": {
+      "id": "glatan.edu@gmail.com"
+    }
+  },
   "permissions": [
+    "menus",
+    "sessions",
+    "storage",
     "tabs",
-    "menus"
+    "unlimitedStorage"
   ],
   "background": {
     "scripts": ["main.js"]
