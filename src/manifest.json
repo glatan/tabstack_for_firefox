@@ -15,6 +15,9 @@
     "unlimitedStorage"
   ],
   "background": {
-    "scripts": ["main.js"]
+    "scripts": [
+      "menu.js",
+      "log.js"
+    ]
   }
 }
