@@ -18,7 +18,8 @@
     "scripts": [
       "menu_createtab.js",
       "menu_switchtab.js",
-      "log.js"
+      "log.js",
+      "tabstack.js"
     ]
   }
 }
