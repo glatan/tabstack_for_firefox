@@ -16,7 +16,8 @@
   ],
   "background": {
     "scripts": [
-      "menu.js",
+      "menu_createtab.js",
+      "menu_switchtab.js",
       "log.js"
     ]
   }
