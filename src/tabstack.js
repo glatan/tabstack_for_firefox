@@ -4,7 +4,6 @@
 let tabstack = [
   //テストデータ
   {
-    index: 0,
     tabs: [],
     activeTab: 'hogehoge'
   }
@@ -19,7 +18,6 @@ let createTabstack = (tabId) => {
       console.log(tabs[0])<`0`>
       // 新規タブスタックの作成
       tabstack.push({
-        index: tabstack.length,
         tabs: [tabs[0].tab],
         activeTab: tabs[0].tab.title
       })
