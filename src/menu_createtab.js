@@ -10,3 +10,10 @@ browser.menus.create({
     console.log("Stack_Tab_Menu Created!")
   }
 })
+
+browser.menus.create({
+  parentId: "tab_stack",
+  id: "createNewTabstack",
+  title: "create new tabstack",
+  contexts: ["tab"]
+})
