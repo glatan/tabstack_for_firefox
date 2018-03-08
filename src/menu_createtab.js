@@ -11,9 +11,28 @@ browser.menus.create({
   }
 })
 
+// 新規タブスタック作成ボタン
 browser.menus.create({
   parentId: "tab_stack",
   id: "createNewTabstack",
   title: "create new tabstack",
   contexts: ["tab"]
+})
+
+//タブスタック作成ボタンとタブスタック一覧のセパレート
+browser.menus.create({
+  parentId: "tab_stack",
+  contexts: ["tab"],
+  type: "separator"
+})
+
+// menuのイベントリスナー
+browser.menus.onClicked.addListener((info, tab) => {
+  switch (info.menuItemId) {
+    case "createNewTabstack":
+      for (let stack of tabstack) {
+        console.log(stack)
+      }
+      break;
+  }
 })

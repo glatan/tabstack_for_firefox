@@ -6,7 +6,15 @@ let tabstack = [
   {
     tabs: [],
     activeTab: 0
-  }
+  },
+  {
+    tabs: [],
+    activeTab: 0
+  },
+  {
+    tabs: [],
+    activeTab: 0
+  },
 ]
 
 // 新規タブスタックの作成
@@ -41,3 +49,13 @@ let addTabstack = (tabId, tabstackIndex) => {
   })
 }
 
+// タブスタック一覧の表示
+// 別ファイルからtabstack変数を参照できなかったため
+for (let index in tabstack) {
+  browser.menus.create({
+    parentId: "tab_stack",
+    id: 'tabstack' + index,
+    title: 'tabstack' + (parseInt(index) + 1),
+    contexts: ['tab']
+  })
+}
