@@ -19,7 +19,7 @@ let createTabstack = (tabId) => {
       // 新規タブスタックの作成
       tabstack.push({
         tabs: [tabs[0].tab],
-        activeTab: tabs[0].tab.title
+        activeTab: 0
       })
     }).then(() => {
       console.log(tabstack)
