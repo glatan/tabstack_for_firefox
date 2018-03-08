@@ -10,6 +10,22 @@ let tabstack = [
   }
 ]
 
+// 新規タブスタックの作成
+let createTabstack = (tabId) => {
+  browser.tabs.remve(tabId).then(() => {
+    browser.sessions.getRecentlyClosed({
+      maxResults: 1
+    }).then((tabs) => {
+      // 新規タブスタックの作成
+      tabstack.push({
+        index: tabstack.length,
+        tabs[tabs[0]],
+        activeTab: tabs[0].title
+      })
+    })
+  })
+}
+
 // タブスタックにタブを追加
 let addTabstack = (tabId, tabstackIndex) => {
   browser.tabs.remove(tabId).then(() => {
