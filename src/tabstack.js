@@ -1,7 +1,14 @@
 // tabstackに関するメソッド
 'use strict'
 // タブスタックを保存する変数
-let tabstack = []
+let tabstack = [
+  //テストデータ
+  {
+    index: 0,
+    tabs: [],
+    activeTab: 'hogehoge'
+  }
+]
 
 // タブスタックにタブを追加
 let addTabstack = (tabId, tabstackIndex) => {
@@ -10,7 +17,7 @@ let addTabstack = (tabId, tabstackIndex) => {
       maxResults: 1
     }).then((tabs) => {
       // タブスタック変数に追加
-      tabstack.push(tabs[0].tab)
+      tabstack[tabstackIndex].tabs.push(tabs[0].tab)
     }).then(() => {
       console.log(tabstack)
     })
