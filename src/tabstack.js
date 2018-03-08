@@ -5,7 +5,7 @@ let tabstack = [
   //テストデータ
   {
     tabs: [],
-    activeTab: 'hogehoge'
+    activeTab: 0
   }
 ]
 
