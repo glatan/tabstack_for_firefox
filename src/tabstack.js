@@ -12,16 +12,19 @@ let tabstack = [
 
 // 新規タブスタックの作成
 let createTabstack = (tabId) => {
-  browser.tabs.remve(tabId).then(() => {
+  browser.tabs.remove(tabId).then(() => {
     browser.sessions.getRecentlyClosed({
       maxResults: 1
     }).then((tabs) => {
+      console.log(tabs[0])<`0`>
       // 新規タブスタックの作成
       tabstack.push({
         index: tabstack.length,
-        tabs[tabs[0]],
-        activeTab: tabs[0].title
+        tabs: [tabs[0].tab],
+        activeTab: tabs[0].tab.title
       })
+    }).then(() => {
+      console.log(tabstack)
     })
   })
 }
