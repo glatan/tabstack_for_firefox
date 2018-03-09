@@ -25,9 +25,11 @@ let createTabstack = (tabId) => {
         title: 'tabstack' + tabstack.length,
         contexts: ['tab'],
         onclick: (info, tab) => {
-          addTabstack(tab.id, tabstack.length)
+          addTabstack(tab.id, tabstack.length - 1)
         }
       })
+    }).then(()=> {
+      console.log(tabstack)
     })
   })
 }
@@ -39,6 +41,7 @@ let addTabstack = (tabId, tabstackIndex) => {
       maxResults: 1
     }).then((tabs) => {
       // タブスタック変数に追加
+      console.log(tabstackIndex)
       tabstack[tabstackIndex].tabs.push(tabs[0].tab)
     }).then(() => {
       console.log(tabstack)
