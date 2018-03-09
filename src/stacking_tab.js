@@ -3,18 +3,6 @@
 // タブスタックを保存する変数
 let tabstack = [
   //テストデータ
-  {
-    tabs: [],
-    activeTab: 0
-  },
-  {
-    tabs: [],
-    activeTab: 0
-  },
-  {
-    tabs: [],
-    activeTab: 0
-  },
 ]
 
 // 新規タブスタックの作成
@@ -30,7 +18,16 @@ let createTabstack = (tabId) => {
         activeTab: 0
       })
     }).then(() => {
-      console.log(tabstack)
+      // メニューの更新
+      browser.menus.create({
+        parentId: "tabstack",
+        id: 'tabstack' + (parseInt(tabstack.length) + 1),
+        title: 'tabstack' + tabstack.length,
+        contexts: ['tab'],
+        onclick: (info, tab) => {
+          addTabstack(tab.id, tabstack.length)
+        }
+      })
     })
   })
 }
@@ -53,9 +50,33 @@ let addTabstack = (tabId, tabstackIndex) => {
 // 別ファイルからtabstack変数を参照できなかったため
 for (let index in tabstack) {
   browser.menus.create({
-    parentId: "tab_stack",
+    parentId: "tabstack",
     id: 'tabstack' + index,
     title: 'tabstack' + (parseInt(index) + 1),
-    contexts: ['tab']
+    contexts: ['tab'],
+    onclick: (info, tab) => {
+      addTabstack(tab.id, index)
+    }
   })
 }
+
+// menuのイベントリスナー
+browser.menus.onClicked.addListener((info, tab) => {
+  switch (info.menuItemId) {
+    case "createNewTabstack":
+      createTabstack(tab.id)
+      break
+  }
+})
+
+// restore test
+/*
+browser.menus.create({
+  id: 'restoreTest',
+  title: 'restore test',
+  contexts: ['tab'],
+  onclick: (info, tab) => {
+    browser.sessions.restore(tabstack[0].tabs[0].sessionId)
+  }
+})
+//*/
