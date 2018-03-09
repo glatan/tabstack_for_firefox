@@ -1,9 +1,7 @@
 // tabstackに関するメソッド
 'use strict'
 // タブスタックを保存する変数
-let tabstack = [
-  //テストデータ
-]
+let tabstack = []
 
 // 新規タブスタックの作成
 let createTabstack = (tabId) => {
@@ -22,7 +20,7 @@ let createTabstack = (tabId) => {
       browser.menus.create({
         parentId: "tabstack",
         id: 'tabstack' + (parseInt(tabstack.length) + 1),
-        title: 'tabstack' + tabstack.length,
+        title: tabstack[tabstack.length - 1].tabs[tabstack[tabstack.length - 1].activeTab].title,
         contexts: ['tab'],
         onclick: (info, tab) => {
           addTabstack(tab.id, tabstack.length - 1)
@@ -55,7 +53,7 @@ for (let index in tabstack) {
   browser.menus.create({
     parentId: "tabstack",
     id: 'tabstack' + index,
-    title: 'tabstack' + (parseInt(index) + 1),
+    title: tabstack[index].tabs[tabstack[index].activeTab].title,
     contexts: ['tab'],
     onclick: (info, tab) => {
       addTabstack(tab.id, index)
