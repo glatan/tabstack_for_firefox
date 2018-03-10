@@ -57,16 +57,19 @@ let addTabstack = (tabId, tabstackIndex) => {
 
 // タブスタック一覧の表示
 // 別ファイルからtabstack変数を参照できなかったため
-for (let index in tabstack) {
-  browser.menus.create({
-    parentId: "tabstack",
-    id: 'tabstack' + index,
-    title: tabstack[index].tabs[tabstack[index].activeTab].title,
-    contexts: ['tab'],
-    onclick: (info, tab) => {
-      addTabstack(tab.id, index)
-    }
-  })
+let initMenu = () => {
+  console.log('hello')
+  for (let index in tabstack) {
+    browser.menus.create({
+      parentId: "tabstack",
+      id: 'tabstack' + index,
+      title: tabstack[index].tabs[tabstack[index].activeTab].title,
+      contexts: ['tab'],
+      onclick: (info, tab) => {
+        addTabstack(tab.id, index)
+      }
+    })
+  }
 }
 
 // menuのイベントリスナー
