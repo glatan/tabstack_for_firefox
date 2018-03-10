@@ -19,7 +19,7 @@ let createTabstack = (tabId) => {
       // メニューの更新
       browser.menus.create({
         parentId: "tabstack",
-        id: 'tabstack' + (parseInt(tabstack.length) + 1),
+        id: 'tabstack' + (parseInt(tabstack.length) - 1),
         title: tabstack[tabstack.length - 1].tabs[tabstack[tabstack.length - 1].activeTab].title,
         contexts: ['tab'],
         onclick: (info, tab) => {
