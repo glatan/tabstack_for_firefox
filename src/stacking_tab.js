@@ -31,6 +31,8 @@ let createTabstack = (tabId) => {
         }
       })
     }).then(()=> {
+      browser.storage.local.set({tabstack})
+    }).then(()=> {
       console.log(tabstack)
     })
   })
@@ -45,6 +47,8 @@ let addTabstack = (tabId, tabstackIndex) => {
       // タブスタック変数に追加
       console.log(tabstackIndex)
       tabstack[tabstackIndex].tabs.push(tabs[0].tab)
+    }).then(()=> {
+      browser.storage.local.set({tabstack})
     }).then(() => {
       console.log(tabstack)
     })
