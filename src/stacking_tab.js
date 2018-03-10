@@ -58,7 +58,6 @@ let addTabstack = (tabId, tabstackIndex) => {
 // タブスタック一覧の表示
 // 別ファイルからtabstack変数を参照できなかったため
 let initMenu = () => {
-  console.log('hello')
   for (let index in tabstack) {
     browser.menus.create({
       parentId: "tabstack",
