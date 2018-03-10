@@ -16,11 +16,12 @@ let createTabstack = (tabId) => {
         activeTab: 0
       })
     }).then(() => {
+      let index = tabstack.length - 1
       // メニューの更新
       browser.menus.create({
         parentId: "tabstack",
-        id: 'tabstack' + (parseInt(tabstack.length) - 1),
-        title: tabstack[tabstack.length - 1].tabs[tabstack[tabstack.length - 1].activeTab].title,
+        id: 'tabstack' + index,
+        title: tabstack[index].tabs[tabstack[index].activeTab].title,
         contexts: ['tab'],
         onclick: (info, tab) => {
           addTabstack(tab.id, tabstack.length - 1)
