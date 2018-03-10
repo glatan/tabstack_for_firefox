@@ -17,7 +17,7 @@ let createTabstack = (tabId) => {
       })
       return tabs[0].tab.sessionId
     }).then((sessionId)=> {
-      browser.sessions.restore(sessionId)
+      browser.sessions.restore(sessionId).then(() => { console.log( 'restored' ) })
     }).then(() => {
       let index = tabstack.length - 1
       // メニューの更新
