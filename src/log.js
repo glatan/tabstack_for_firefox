@@ -1,8 +1,8 @@
 // タブのスタック状態の取得
-function get_tab_state () {
-  // let tab_state = browser.storage.local.get()
-  // tab_state.then(console.log(tab_state))
-}
+// function get_tab_state () {
+//   // let tab_state = browser.storage.local.get()
+//   // tab_state.then(console.log(tab_state))
+// }
 // タブのスタック状態の保存
 function save_tab_state(tab_state) {
   browser.storage.local.set({
