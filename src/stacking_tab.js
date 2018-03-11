@@ -9,7 +9,6 @@ let createTabstack = (tabId) => {
     browser.sessions.getRecentlyClosed({
       maxResults: 1
     }).then((tabs) => {
-      console.log(tabs[0])<`0`>
       // 新規タブスタックの作成
       tabstack.push({
         tabs: [tabs[0].tab],
@@ -32,8 +31,6 @@ let createTabstack = (tabId) => {
       })
     }).then(()=> {
       browser.storage.local.set({tabstack})
-    }).then(()=> {
-      console.log(tabstack)
     })
   })
 }
@@ -45,12 +42,9 @@ let addTabstack = (tabId, tabstackIndex) => {
       maxResults: 1
     }).then((tabs) => {
       // タブスタック変数に追加
-      console.log(tabstackIndex)
       tabstack[tabstackIndex].tabs.push(tabs[0].tab)
     }).then(()=> {
       browser.storage.local.set({tabstack})
-    }).then(() => {
-      console.log(tabstack)
     })
   })
 }
