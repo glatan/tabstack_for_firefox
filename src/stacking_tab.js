@@ -83,10 +83,10 @@ browser.runtime.onStartup.addListener(() => {
   })
 })
 
-let UpdateMenu = (index) => {
-  let stack = tabstack[index]
-  let activeTabTitle = stack.tabs[stack.activeTab].title
-  browser.menus.update(`tabstack${index}`, {
-    title: activeTabTitle
-  })
-}
+// let UpdateMenu = (index) => {
+//   let stack = tabstack[index]
+//   let activeTabTitle = stack.tabs[stack.activeTab].title
+//   browser.menus.update(`tabstack${index}`, {
+//     title: activeTabTitle
+//   })
+// }
