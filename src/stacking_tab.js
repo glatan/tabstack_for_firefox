@@ -82,15 +82,3 @@ browser.runtime.onStartup.addListener(() => {
     initMenu()
   })
 })
-
-// restore test
-/*
-browser.menus.create({
-  id: 'restoreTest',
-  title: 'restore test',
-  contexts: ['tab'],
-  onclick: (info, tab) => {
-    browser.sessions.restore(tabstack[0].tabs[0].sessionId)
-  }
-})
-//*/
