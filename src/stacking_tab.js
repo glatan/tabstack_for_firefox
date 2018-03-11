@@ -80,6 +80,15 @@ browser.menus.onClicked.addListener((info, tab) => {
   }
 })
 
+// ブラウザ起動時の処理
+browser.runtime.onStartup.addListener(() => {
+  browser.storage.local.get('tabstack').then((log) => {
+    tabstack = log.tabstack
+  }).then(() => {
+    initMenu()
+  })
+})
+
 // restore test
 /*
 browser.menus.create({
