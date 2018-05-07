@@ -1,4 +1,4 @@
-# tabstack_for_firefox
+# TabStack for Firefox
 
 ## 注意事項
 
